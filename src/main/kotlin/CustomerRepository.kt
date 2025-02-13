@@ -6,11 +6,11 @@ import org.springframework.data.repository.CrudRepository
 interface CustomerRepository : CrudRepository<Customer, Int> {
 
 
-    @Query("select c.name from Customer c")
+    @Query("select c.name as name, c.age as age from Customer c")
     fun customProjectionQuery(): List<NameWithAgeOnlyInt>
 
-    @Query("select c.name from Customer c")
-    fun customProjectionQuerDto(): List<NameWithAgeOnly>
+    @Query("select c.name as name, c.age as age from Customer c")
+    fun customProjectionQueryDto(): List<NameWithAgeOnly>
 
 }
 

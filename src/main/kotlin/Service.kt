@@ -16,7 +16,7 @@ class Service(
         customerRepository.save(customerWithoutName)
         val customers = customerRepository.customProjectionQuery()
         for (customer in customers) {
-            println(customer.name)
+            println(customer.name + " " + customer.age)
         }
     }
 }
